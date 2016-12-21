@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}BlogCreator{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+            <!-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" /> -->
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+    </head>
+    <body>
+        {% block body %}
+        	<div id="wrapper">
+		        <div id="container">
+		            <div id="welcome">
+		                <h1>My blog creator</h1>
+		            </div>
+
+		            <div id="buttondiv">
+		                <a href="/register" class="button">Register</a>
+		                <a href="/login" class="button">Log In</a>
+		            </div>
+		        </div>
+		    </div>
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
