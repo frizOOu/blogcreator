@@ -63,6 +63,7 @@ class ComposerStaticInit0a2fcc43741cce9f826e26f7632f65c5
         array (
             'Doctrine\\Instantiator\\' => 22,
             'Doctrine\\Common\\Cache\\' => 22,
+            'Doctrine\\Common\\Annotations\\' => 28,
             'Doctrine\\Common\\' => 16,
             'Doctrine\\Bundle\\DoctrineCacheBundle\\' => 36,
             'Doctrine\\Bundle\\DoctrineBundle\\' => 31,
@@ -170,6 +171,10 @@ class ComposerStaticInit0a2fcc43741cce9f826e26f7632f65c5
         array (
             0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
         ),
+        'Doctrine\\Common\\Annotations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations',
+        ),
         'Doctrine\\Common\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
@@ -225,9 +230,12 @@ class ComposerStaticInit0a2fcc43741cce9f826e26f7632f65c5
             array (
                 0 => __DIR__ . '/..' . '/doctrine/collections/lib',
             ),
-            'Doctrine\\Common\\Annotations\\' => 
+        ),
+        'B' => 
+        array (
+            'Bmatzner\\FontAwesomeBundle' => 
             array (
-                0 => __DIR__ . '/..' . '/doctrine/annotations/lib',
+                0 => __DIR__ . '/..' . '/bmatzner/fontawesome-bundle',
             ),
         ),
     );

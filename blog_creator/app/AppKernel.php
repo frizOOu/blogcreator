@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new BlogBundle\BlogBundle(),
             new ArticlesBundle\ArticlesBundle(),
             new CommentBundle\CommentBundle(),
+            new Bmatzner\FontAwesomeBundle\BmatznerFontAwesomeBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

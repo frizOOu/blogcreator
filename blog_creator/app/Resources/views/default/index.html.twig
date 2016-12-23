@@ -2,22 +2,58 @@
 {% block body %}
     <div id="wrapper">
         <div id="container">
-        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                {{ 'Logout :'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-                <a href="{{ path('fos_user_security_logout') }}">
-                    {{ 'Log Out'|trans({}, 'FOSUserBundle') }}
-                </a>
-        {% endif %}
-            <div id="welcome">
-                <h1>My blog creator</h1>
-            </div>
+                <div class="logo_princ">
+                    <img src="{{ asset("img/logo.svg")}}"/>
+                </div>
+            <div class="main_wrapper">
+                <nav class="nav_princ">
+                    <a href="/home">
+                        <p>Home</p>
+                    </a>
+                    <a href="/articles">
+                        <p>My Backoffice</p>
+                    </a>
+                    <a href="#">
+                        <p>Profile</p>
+                    </a>
+                    <a href="#">
+                        <p>#jenecpaswesh</p>
+                    </a>
+                </nav>
+                <div class="content_maj">
+                    <div class="main-left">
+                        {% for article in articles %}
+                        <div class="one_article">
+                            <img src="{{ article.image }}"/>
+                            <div class="text_article">
+                                <h3><span>##</span> {{ article.title }}</h3>
+                                <p>{{ article.content }}</p>
+                                <span>Read More</span>
+                                <div class="asset_article">
+                                    <a href="">
+                                        <i class="fa fa-comments-o" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="fa fa-gratipay" aria-hidden="true"></i>
+                                    </a>
 
-            <div id="buttondiv">
-                <a href="/register" class="button">Register</a>
-                <a href="/login" class="button">Log In</a>
-            </div>
-            <div id="createblog">
-                <a href = "/blog" class="button">Create Blog</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="main-right">
+                        <h2>Recommended Blog</h2>
+                        {% for user in users %}
+                        <div class="one_profile">
+                            <img src="http://s.plurielles.fr/mmdia/i/22/3/people-megan-fox-2509223_123.jpg?v=6"/>
+                            <div class="text_recommended">
+                                <h3>{{ user.username }}</h3>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
         </div>
     </div>

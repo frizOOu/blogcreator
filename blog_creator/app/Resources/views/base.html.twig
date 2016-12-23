@@ -5,10 +5,23 @@
         <title>{% block title %}BlogCreator{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-            <!-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" /> -->
-        <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:700|Open+Sans+Condensed:300|Raleway|Trirong:400i" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" /> -->
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/bmatznerfontawesome/css/font-awesome.min.css') }}" />
     </head>
     <body>
+    <header>
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            <a href="{{ path('fos_user_security_logout') }}">
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+            </a>
+        {% else %}
+            <a href="/login"> <i class="fa fa-sign-in" aria-hidden="true"></i></a>
+        {% endif %}
+        <a href="#"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+        <a href="/articles/new"> <i class="fa fa-plus" aria-hidden="true"></i></a>
+    </header>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

@@ -34,7 +34,7 @@ class CachePoolPass implements CompilerPassInterface
         } else {
             $seed = '_'.$container->getParameter('kernel.root_dir');
         }
-        $seed .= '.'.$container->getParameter('kernel.name').'.'.$container->getParameter('kernel.environment').'.'.$container->getParameter('kernel.debug');
+        $seed .= '.'.$container->getParameter('kernel.name').'.'.$container->getParameter('kernel.environment');
 
         $aliases = $container->getAliases();
         $attributes = array(
@@ -96,7 +96,9 @@ class CachePoolPass implements CompilerPassInterface
      */
     public static function getServiceProvider(ContainerBuilder $container, $name)
     {
-        if (0 === strpos($name, 'redis://')) {
+        $container->resolveEnvPlaceholders($name, null, $usedEnvs);
+
+        if (0 === strpos($name, 'redis://') || $usedEnvs) {
             $dsn = $name;
 
             if (!$container->hasDefinition($name = md5($dsn))) {

@@ -39,7 +39,7 @@ class ArticlesController extends Controller
      */
     public function newAction(Request $request)
     {
-        $article = new Article();
+        $article = new Articles();
         $form = $this->createForm('ArticlesBundle\Form\ArticlesType', $article);
         $form->handleRequest($request);
 

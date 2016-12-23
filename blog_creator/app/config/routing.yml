@@ -1,22 +1,22 @@
 comment:
     resource: "@CommentBundle/Controller/"
     type:     annotation
-    prefix:   /blog-comment
+    prefix:   /
 
 articles:
     resource: "@ArticlesBundle/Controller/"
     type:     annotation
-    prefix:   /blog-article
+    prefix:   /
 
 blog:
     resource: "@BlogBundle/Controller/"
     type:     annotation
-    prefix:   /blog-blog
+    prefix:   /
 
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
-    prefix: /
+    prefix: /home
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"

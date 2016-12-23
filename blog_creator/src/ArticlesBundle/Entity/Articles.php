@@ -35,6 +35,13 @@ class Articles
      */
     private $content;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="text")
+     */
+    private $image;
+
 
     /**
      * Get id
@@ -93,5 +100,28 @@ class Articles
     {
         return $this->content;
     }
-}
 
+    /**
+     * Set image
+     *
+     * @param string $image
+     *
+     * @return Articles
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+}
